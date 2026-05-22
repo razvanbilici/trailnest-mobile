@@ -1,0 +1,250 @@
+import type { Trail } from '../types';
+
+export const trails: Trail[] = [
+  {
+    id: 'trail-1',
+    title: 'Creasta Morii — Bucegi',
+    difficulty: 'moderate',
+    duration: '4h 30m',
+    distance: '12,4 km',
+    elevation: '+680 m',
+    elevationGainM: 680,
+    crowdLevel: 'high',
+    location: 'Sinaia, Prahova',
+    region: 'Bucegi',
+    images: [
+      'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=80',
+      'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1200&q=80',
+      'https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1200&q=80',
+    ],
+    description:
+      'Traseu clasic în Munții Bucegi, cu panorame spre Piatra Arsă și Valea Ialomiței. Poteci bine marcate, potrivit pentru drumeți cu experiență medie. Plecare recomandată din Bușteni sau Sinaia.',
+    reviews: [
+      {
+        id: 'r1',
+        author: 'Maria P.',
+        avatar: 'https://i.pravatar.cc/150?u=maria',
+        rating: 5,
+        date: '2025-04-12',
+        comment:
+          'Vedere spectaculoasă! Plecați devreme pentru a evita aglomerația din weekend.',
+      },
+      {
+        id: 'r2',
+        author: 'Andrei M.',
+        avatar: 'https://i.pravatar.cc/150?u=andrei',
+        rating: 4,
+        date: '2025-03-28',
+        comment: 'Traseu frumos, puțin abrupt spre final, dar merită fiecare pas.',
+      },
+    ],
+    rating: 4.8,
+    reviewCount: 234,
+    weather: {
+      temp: 14,
+      condition: 'Parțial înnorat',
+      icon: 'cloud',
+      humidity: 62,
+      windSpeed: 12,
+    },
+    coordinates: { lat: 45.411, lng: 25.537 },
+    tags: ['alpin', 'panorame', 'bucle'],
+  },
+  {
+    id: 'trail-2',
+    title: 'Cheile Galbenei — Padiș',
+    difficulty: 'easy',
+    duration: '2h 15m',
+    distance: '5,8 km',
+    elevation: '+120 m',
+    elevationGainM: 120,
+    crowdLevel: 'moderate',
+    location: 'Padiș, Bihor',
+    region: 'Apuseni',
+    images: [
+      'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1200&q=80',
+      'https://images.unsplash.com/photo-1518495973542-9faed542ead0?w=1200&q=80',
+    ],
+    description:
+      'Plimbare prin pădurea de fag din Apuseni până la chei și cascade. Unul dintre cele mai accesibile trasee din Parcul Natural Apuseni, ideal pentru familii.',
+    reviews: [
+      {
+        id: 'r3',
+        author: 'Elena D.',
+        avatar: 'https://i.pravatar.cc/150?u=elena',
+        rating: 5,
+        date: '2025-05-01',
+        comment: 'Perfect pentru o excursie cu copiii. Peisaj de poveste!',
+      },
+    ],
+    rating: 4.9,
+    reviewCount: 412,
+    weather: {
+      temp: 16,
+      condition: 'Burniță ușoară',
+      icon: 'rain',
+      humidity: 88,
+      windSpeed: 8,
+    },
+    coordinates: { lat: 46.553, lng: 22.817 },
+    tags: ['pădure', 'cascadă', 'familie'],
+  },
+  {
+    id: 'trail-3',
+    title: 'Vârful Omu — Bucegi',
+    difficulty: 'expert',
+    duration: '8h 45m',
+    distance: '18,2 km',
+    elevation: '+1.420 m',
+    elevationGainM: 1420,
+    crowdLevel: 'low',
+    location: 'Platoul Bucegi',
+    region: 'Bucegi',
+    images: [
+      'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1200&q=80',
+      'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=80',
+    ],
+    description:
+      'Ascensiune la cel mai înalt vârf din Bucegi (2.505 m). Traseu lung, expus la vânt și ceață; necesită echipament montan și condiție fizică foarte bună.',
+    reviews: [
+      {
+        id: 'r4',
+        author: 'Cristian V.',
+        avatar: 'https://i.pravatar.cc/150?u=cristian',
+        rating: 5,
+        date: '2025-02-18',
+        comment: 'Cea mai grea și mai reușită drumeție. Atenție la echipament și vreme!',
+      },
+    ],
+    rating: 4.7,
+    reviewCount: 89,
+    weather: { temp: 4, condition: 'Senin', icon: 'sun', humidity: 45, windSpeed: 22 },
+    coordinates: { lat: 45.445, lng: 25.469 },
+    tags: ['vârf', 'alpin', 'provocator'],
+  },
+  {
+    id: 'trail-4',
+    title: 'Șaua La Om — Piatra Craiului',
+    difficulty: 'moderate',
+    duration: '3h 20m',
+    distance: '9,1 km',
+    elevation: '+340 m',
+    elevationGainM: 340,
+    crowdLevel: 'moderate',
+    location: 'Zărnești, Brașov',
+    region: 'Piatra Craiului',
+    images: [
+      'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&q=80',
+      'https://images.unsplash.com/photo-1476514525535-07fb3b4d4620?w=1200&q=80',
+    ],
+    description:
+      'Traseu în Parcul Național Piatra Craiului, cu priveliști spre crestele calcaroase și pășuni alpine. Frecventat de iubitorii de fotografie și natură sălbatică.',
+    reviews: [
+      {
+        id: 'r5',
+        author: 'Ioana T.',
+        avatar: 'https://i.pravatar.cc/150?u=ioana',
+        rating: 5,
+        date: '2025-04-22',
+        comment: 'Peisaje incredibile. Am văzut capre negre în zonă!',
+      },
+    ],
+    rating: 4.6,
+    reviewCount: 178,
+    weather: {
+      temp: 19,
+      condition: 'Însorit',
+      icon: 'sun',
+      humidity: 55,
+      windSpeed: 18,
+    },
+    coordinates: { lat: 45.382, lng: 25.223 },
+    tags: ['creastă', 'faună', 'parc național'],
+  },
+  {
+    id: 'trail-5',
+    title: 'Vârful Toaca — Ceahlău',
+    difficulty: 'hard',
+    duration: '6h 10m',
+    distance: '14,7 km',
+    elevation: '+920 m',
+    elevationGainM: 920,
+    crowdLevel: 'high',
+    location: 'Durău, Neamț',
+    region: 'Ceahlău',
+    images: [
+      'https://images.unsplash.com/photo-1509316785289-025f5b846b80?w=1200&q=80',
+      'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=1200&q=80',
+    ],
+    description:
+      'Urcare pe Ceahlăul, „Muntele Zeilor". Traseu stâncos, cu secțiuni abrupte; recompensa este panorama asupra lacurilor Izvorul Muntelui și a crestelor înconjoarătoare.',
+    reviews: [
+      {
+        id: 'r6',
+        author: 'Dan R.',
+        avatar: 'https://i.pravatar.cc/150?u=dan',
+        rating: 4,
+        date: '2025-03-15',
+        comment: 'Foarte frumos, dar aglomerat în august. Recomand primăvara sau toamna.',
+      },
+    ],
+    rating: 4.5,
+    reviewCount: 312,
+    weather: {
+      temp: 22,
+      condition: 'Însorit',
+      icon: 'sun',
+      humidity: 40,
+      windSpeed: 10,
+    },
+    coordinates: { lat: 47.059, lng: 25.924 },
+    tags: ['vârf', 'stâncă', 'fotografie'],
+  },
+  {
+    id: 'trail-6',
+    title: 'Pădurea Letea — Delta Dunării',
+    difficulty: 'easy',
+    duration: '1h 45m',
+    distance: '4,2 km',
+    elevation: '+5 m',
+    elevationGainM: 5,
+    crowdLevel: 'moderate',
+    location: 'Letea, Tulcea',
+    region: 'Delta Dunării',
+    images: [
+      'https://images.unsplash.com/photo-1439066615861-d1af74d74000?w=1200&q=80',
+      'https://images.unsplash.com/photo-1472214103451-9374bd1c798e?w=1200&q=80',
+    ],
+    description:
+      'Plimbare lejeră prin pădurea subtropicală de la Letea, cea mai veche din România. Specii rare de plante, cai sălbatici și liniște deosebită.',
+    reviews: [
+      {
+        id: 'r7',
+        author: 'Ana W.',
+        avatar: 'https://i.pravatar.cc/150?u=ana',
+        rating: 5,
+        date: '2025-05-08',
+        comment: 'Experiență unică în România. Ghid local recomandat pentru zone protejate.',
+      },
+    ],
+    rating: 4.8,
+    reviewCount: 567,
+    weather: {
+      temp: 24,
+      condition: 'Înnorat',
+      icon: 'cloud',
+      humidity: 72,
+      windSpeed: 10,
+    },
+    coordinates: { lat: 45.297, lng: 29.158 },
+    tags: ['deltă', 'ușor', 'natură'],
+  },
+];
+
+export function getTrailById(id: string): Trail | undefined {
+  return trails.find((t) => t.id === id);
+}
+
+export function getPopularTrails(limit = 4): Trail[] {
+  return [...trails].sort((a, b) => b.reviewCount - a.reviewCount).slice(0, limit);
+}
