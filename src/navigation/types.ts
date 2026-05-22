@@ -31,9 +31,14 @@ export type ProfileStackParamList = {
   Profile: undefined;
 };
 
+export type StoriesStackParamList = {
+  Stories: undefined;
+};
+
 export type MainTabParamList = {
   HomeTab: NavigatorScreenParams<HomeStackParamList>;
   TrailsTab: NavigatorScreenParams<TrailsStackParamList>;
+  StoriesTab: NavigatorScreenParams<StoriesStackParamList>;
   GlampingTab: NavigatorScreenParams<GlampingStackParamList>;
   ExcursionsTab: NavigatorScreenParams<ExcursionsStackParamList>;
   ProfileTab: NavigatorScreenParams<ProfileStackParamList>;

@@ -100,6 +100,19 @@ export interface AppNotification {
   trailId?: string;
 }
 
+export interface StoryMoment {
+  id: string;
+  userName: string;
+  userAvatar: string;
+  trailName: string;
+  region: string;
+  image: string;
+  caption: string;
+  postedAt: string;
+  likes: number;
+  hasUnseen: boolean;
+}
+
 export interface User {
   id: string;
   name: string;

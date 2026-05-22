@@ -1,7 +1,7 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { Home, Map, Tent, CalendarDays, User } from 'lucide-react-native';
+import { Home, Map, Tent, CalendarDays, User, CirclePlay } from 'lucide-react-native';
 import { useTheme } from '../theme/ThemeProvider';
 import { HomeScreen } from '../screens/home/HomeScreen';
 import { TrailsScreen } from '../screens/trails/TrailsScreen';
@@ -10,12 +10,14 @@ import { GlampingScreen } from '../screens/glamping/GlampingScreen';
 import { GlampingDetailsScreen } from '../screens/glamping/GlampingDetailsScreen';
 import { ExcursionsScreen } from '../screens/excursions/ExcursionsScreen';
 import { ProfileScreen } from '../screens/profile/ProfileScreen';
+import { StoriesScreen } from '../screens/stories/StoriesScreen';
 import type {
   ExcursionsStackParamList,
   GlampingStackParamList,
   HomeStackParamList,
   MainTabParamList,
   ProfileStackParamList,
+  StoriesStackParamList,
   TrailsStackParamList,
 } from './types';
 
@@ -25,6 +27,7 @@ const TrailsStack = createNativeStackNavigator<TrailsStackParamList>();
 const GlampingStack = createNativeStackNavigator<GlampingStackParamList>();
 const ExcursionsStack = createNativeStackNavigator<ExcursionsStackParamList>();
 const ProfileStack = createNativeStackNavigator<ProfileStackParamList>();
+const StoriesStack = createNativeStackNavigator<StoriesStackParamList>();
 
 function useStackScreenOptions() {
   const theme = useTheme();
@@ -131,6 +134,19 @@ function ProfileStackNavigator() {
   );
 }
 
+function StoriesStackNavigator() {
+  const screenOptions = useStackScreenOptions();
+  return (
+    <StoriesStack.Navigator screenOptions={screenOptions}>
+      <StoriesStack.Screen
+        name="Stories"
+        component={StoriesScreen}
+        options={{ title: 'Stories' }}
+      />
+    </StoriesStack.Navigator>
+  );
+}
+
 export function MainNavigator() {
   const theme = useTheme();
   return (
@@ -163,6 +179,14 @@ export function MainNavigator() {
         options={{
           title: 'Trasee',
           tabBarIcon: ({ color, size }) => <Map color={color} size={size} />,
+        }}
+      />
+      <Tabs.Screen
+        name="StoriesTab"
+        component={StoriesStackNavigator}
+        options={{
+          title: 'Stories',
+          tabBarIcon: ({ color, size }) => <CirclePlay color={color} size={size} />,
         }}
       />
       <Tabs.Screen

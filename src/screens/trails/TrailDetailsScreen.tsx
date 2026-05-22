@@ -7,7 +7,7 @@ import {
   Text,
   View,
 } from 'react-native';
-import { MapPin, Clock, Mountain, Users, Star } from 'lucide-react-native';
+import { MapPin, Clock, Mountain, Users, Star, MessageCircle } from 'lucide-react-native';
 import type { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { useTheme } from '../../theme/ThemeProvider';
 import { getTrailById } from '../../data/mockTrails';
@@ -23,6 +23,7 @@ import {
   difficultyColors,
   difficultyLabel,
 } from '../../lib/utils';
+import { shareToWhatsApp } from '../../lib/share';
 import type { HomeStackParamList } from '../../navigation/types';
 
 type Props = NativeStackScreenProps<HomeStackParamList, 'TrailDetails'>;
@@ -168,6 +169,17 @@ export function TrailDetailsScreen({ route }: Props) {
           ))}
         </View>
 
+        <Button
+          title="Share pe WhatsApp"
+          fullWidth
+          variant="outline"
+          leftIcon={<MessageCircle size={16} color={theme.colors.primary} />}
+          onPress={() =>
+            shareToWhatsApp(
+              `Hai pe ${trail.title} (${trail.location})! Dificultate: ${difficultyLabel(trail.difficulty)}. Vrei să mergem? - trimis din TrailNest`
+            )
+          }
+        />
         <Button title="Planifică drumeție" fullWidth style={{ marginTop: 8 }} />
       </View>
     </ScrollView>
