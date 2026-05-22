@@ -33,6 +33,7 @@ export type ProfileStackParamList = {
 
 export type StoriesStackParamList = {
   Stories: undefined;
+  StoryViewer: { storyId: string };
 };
 
 export type MainTabParamList = {

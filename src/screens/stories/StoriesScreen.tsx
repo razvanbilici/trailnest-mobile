@@ -2,18 +2,23 @@ import React, { useMemo } from 'react';
 import {
   Image,
   ImageBackground,
+  Pressable,
   ScrollView,
   StyleSheet,
   Text,
   View,
 } from 'react-native';
 import { Heart, MapPin, MessageCircle } from 'lucide-react-native';
+import type { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { useTheme } from '../../theme/ThemeProvider';
 import { getStoryMoments } from '../../data/mockStories';
 import { Button } from '../../components/ui/Button';
 import { shareToWhatsApp } from '../../lib/share';
+import type { StoriesStackParamList } from '../../navigation/types';
 
-export function StoriesScreen() {
+type Props = NativeStackScreenProps<StoriesStackParamList, 'Stories'>;
+
+export function StoriesScreen({ navigation }: Props) {
   const theme = useTheme();
   const stories = useMemo(() => getStoryMoments(), []);
 
@@ -36,7 +41,11 @@ export function StoriesScreen() {
         contentContainerStyle={styles.ringRow}
       >
         {stories.map((story) => (
-          <View key={`ring-${story.id}`} style={styles.ringItem}>
+          <Pressable
+            key={`ring-${story.id}`}
+            style={styles.ringItem}
+            onPress={() => navigation.navigate('StoryViewer', { storyId: story.id })}
+          >
             <View
               style={[
                 styles.avatarRing,
@@ -55,7 +64,7 @@ export function StoriesScreen() {
             >
               {story.userName}
             </Text>
-          </View>
+          </Pressable>
         ))}
       </ScrollView>
 
@@ -72,24 +81,28 @@ export function StoriesScreen() {
               },
             ]}
           >
-            <ImageBackground source={{ uri: story.image }} style={styles.storyImage}>
-              <View style={[styles.imageOverlay, { backgroundColor: theme.colors.overlay }]} />
-              <View style={styles.imageMeta}>
-                <View style={styles.userRow}>
-                  <Image source={{ uri: story.userAvatar }} style={styles.userAvatarSmall} />
-                  <View>
-                    <Text style={styles.userName}>{story.userName}</Text>
-                    <Text style={styles.timeText}>{story.postedAt}</Text>
+            <Pressable
+              onPress={() => navigation.navigate('StoryViewer', { storyId: story.id })}
+            >
+              <ImageBackground source={{ uri: story.image }} style={styles.storyImage}>
+                <View style={[styles.imageOverlay, { backgroundColor: theme.colors.overlay }]} />
+                <View style={styles.imageMeta}>
+                  <View style={styles.userRow}>
+                    <Image source={{ uri: story.userAvatar }} style={styles.userAvatarSmall} />
+                    <View>
+                      <Text style={styles.userName}>{story.userName}</Text>
+                      <Text style={styles.timeText}>{story.postedAt}</Text>
+                    </View>
+                  </View>
+                  <View style={styles.locationRow}>
+                    <MapPin size={14} color="#ffffff" />
+                    <Text style={styles.locationText}>
+                      {story.trailName} • {story.region}
+                    </Text>
                   </View>
                 </View>
-                <View style={styles.locationRow}>
-                  <MapPin size={14} color="#ffffff" />
-                  <Text style={styles.locationText}>
-                    {story.trailName} • {story.region}
-                  </Text>
-                </View>
-              </View>
-            </ImageBackground>
+              </ImageBackground>
+            </Pressable>
 
             <View style={styles.cardBody}>
               <Text style={[styles.caption, { color: theme.colors.text }]}>{story.caption}</Text>

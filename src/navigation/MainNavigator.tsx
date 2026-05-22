@@ -11,6 +11,7 @@ import { GlampingDetailsScreen } from '../screens/glamping/GlampingDetailsScreen
 import { ExcursionsScreen } from '../screens/excursions/ExcursionsScreen';
 import { ProfileScreen } from '../screens/profile/ProfileScreen';
 import { StoriesScreen } from '../screens/stories/StoriesScreen';
+import { StoryViewerScreen } from '../screens/stories/StoryViewerScreen';
 import type {
   ExcursionsStackParamList,
   GlampingStackParamList,
@@ -142,6 +143,11 @@ function StoriesStackNavigator() {
         name="Stories"
         component={StoriesScreen}
         options={{ title: 'Stories' }}
+      />
+      <StoriesStack.Screen
+        name="StoryViewer"
+        component={StoryViewerScreen}
+        options={{ headerShown: false }}
       />
     </StoriesStack.Navigator>
   );
